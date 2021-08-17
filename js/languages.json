@@ -1,0 +1,32 @@
+{
+  "en-us": {
+    "name": "English (US)",
+    "icon": "images/us.png",
+    "enabled": true
+  },
+  "de": {
+    "name": "Deutsch",
+    "icon": "images/de.png",
+    "enabled": false
+  },
+  "pt": {
+    "name": "Português",
+    "icon": "images/pt.png",
+    "enabled": false
+  },
+  "zh-cn": {
+    "name": "简体中文",
+    "icon": "images/cn.png",
+    "enabled": false
+  },
+  "zh-tw": {
+    "name": "繁體中文",
+    "icon": "images/tw.png",
+    "enabled": false
+  },
+  "ja": {
+    "name": "日本語",
+    "icon": "images/jp.png",
+    "enabled": false
+  }
+}

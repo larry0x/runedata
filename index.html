@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-T5R2L64KNF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-T5R2L64KNF");
+    </script>
+
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:wght@500;700&family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="icon" href="images/favicon.png" />
+
+    <link rel="stylesheet" href="css/body.css" />
+    <link rel="stylesheet" href="css/form.css" />
+    <link rel="stylesheet" href="css/icons.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/overlay.css" />
+
+    <title>Runedata v2</title>
+  </head>
+  <body>
+    <div id="spinnerContainer" style="display: none">
+      <img id="spinner" src="images/Spin-1s-200px.gif" />
+    </div>
+
+    <nav class="navbar">
+      <div id="logo" class="me-auto d-flex align-items-center">
+        <img src="images/rune.png" class="me-2" />
+        <h2 class="m-0 d-flex">
+          <span class="text-deepskyblue text-bold" style="margin-right: 2px">
+            RUNE
+          </span>
+          <span class="text-turquoise">DATA</span>
+        </h2>
+      </div>
+      <div id="socialMediaIcons" class="ms-auto me-2">
+        <a
+          class="me-3"
+          href="https://gitlab.com/runedata"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="36" height="36" viewBox="0 0 16 16">
+            <use xlink:href="images/gitlab.svg#path" />
+          </svg>
+        </a>
+        <a
+          class="me-3"
+          href="https://twitter.com/_0x_larry"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="38" height="38" viewBox="0 0 16 16">
+            <use xlink:href="images/twitter.svg#path" />
+          </svg>
+        </a>
+        <a
+          class="me-3"
+          href="https://0xlarry.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg width="36" height="36" viewBox="0 0 16 16">
+            <use xlink:href="images/bitcoin.svg#path" />
+          </svg>
+        </a>
+      </div>
+      <div id="languageSelector" class="ms-2 me-1">
+        <div class="btn-group" role="group">
+          <div
+            id="selectedLanguage"
+            class="rounded-start border border-dark d-flex align-items-center ps-3"
+          ></div>
+          <div class="btn-group">
+            <button
+              class="btn btn-outline-dark dropdown-toggle"
+              data-bs-toggle="dropdown"
+              data-bs-display="static"
+            >
+              <span class="lang-en-us">Select</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <div id="languagesDropdown"></div>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li>
+                <h6 class="dropdown-header">
+                  <div class="mb-2">Want to help with localization?</div>
+                  <a
+                    href="https://twitter.com/messages/compose?recipient_id=1134151355776585729"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Contact the developer
+                  </a>
+                </h6>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container p-2 mt-5 max-width-1200px">
+      <div class="ratio ratio-21x9">
+        <canvas id="canvas1" width="2368" height="1014" class="blur"></canvas>
+        <canvas
+          id="canvas2"
+          width="2368"
+          height="1014"
+          class="blur"
+          style="display: none"
+        ></canvas>
+        <canvas
+          id="canvas3"
+          width="2368"
+          height="1014"
+          class="blur"
+          style="display: none"
+        ></canvas>
+        <canvas
+          id="canvas4"
+          width="2368"
+          height="1014"
+          class="blur"
+          style="display: none"
+        ></canvas>
+        <div
+          id="canvas5And6Container"
+          class="row blur"
+          style="display: none; transform: translateX(12px)"
+        >
+          <div class="col-6 pe-1">
+            <canvas id="canvas5" width="594" height="509"></canvas>
+          </div>
+          <div class="col-6 ps-1">
+            <canvas id="canvas6" width="594" height="509"></canvas>
+          </div>
+        </div>
+        <div id="chartOverlay" class="overlay">
+          <div class="overlay-text">
+            Pick your options at the bottom fo the page,<br />
+            then hit <b>Submit</b> to continue.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container p-2 mt-3 max-width-1200px">
+      <div class="row">
+        <div class="col-6">
+          <!-- Pool selector -->
+          <div class="row">
+            <div class="col-11 offset-1">
+              <div class="mb-2">Select pool</div>
+              <div id="coinSelector" class="btn-group" role="group">
+                <div
+                  id="selectedCoin"
+                  class="rounded-start border d-flex align-items-center ps-3"
+                ></div>
+                <div class="btn-group dropup">
+                  <button
+                    class="btn btn-outline-primary dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    data-bs-display="static"
+                  >
+                    Select
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li>
+                      <h6 class="dropdown-header">
+                        Use the search bar to search from all available pools
+                      </h6>
+                      <input
+                        id="coinsInput"
+                        type="text"
+                        class="form-control mt-1 ms-3 mb-3"
+                      />
+                    </li>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <h6 class="dropdown-header" id="coinsDropdownTitle"></h6>
+                    </li>
+                    <div id="coinsDropdown"></div>
+                    <li>
+                      <hr class="dropdown-divider" />
+                    </li>
+                    <li>
+                      <h6 class="dropdown-header">
+                        Can't find your pool?
+                        <a
+                          href="https://twitter.com/messages/compose?recipient_id=1134151355776585729"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Contact the developer
+                        </a>
+                      </h6>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="simulateForm">
+            <!-- Address input -->
+            <div class="row mt-4">
+              <div class="col-10 offset-1">
+                <div class="mb-2">
+                  <b>If you are already providing liquidity,</b> simply enter
+                  your THORChain address below:
+                </div>
+                <div class="row">
+                  <div class="col-10 pe-1">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="addressInput"
+                      placeholder="[Feature under construction]"
+                      disabled
+                    />
+                  </div>
+                  <div class="col-2 ps-1">
+                    <button
+                      id="submitBtn1"
+                      class="btn btn-outline-primary"
+                      disabled
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" style="margin-top: 1rem; margin-bottom: 1rem">
+              <div class="col-10 offset-1">
+                <div style="transform: translateY(3px)">&ndash; or &ndash;</div>
+              </div>
+            </div>
+
+            <!-- Amount & date inputs -->
+            <div class="row mt-4">
+              <div class="col-10 offset-1">
+                <div class="mb-2">
+                  <b>If you are not yet a liquidity provider,</b> fill out the
+                  following info to see how your investment would have played
+                  out if you had provided liquidity earlier:
+                </div>
+                <div class="row">
+                  <div class="col-5 pe-1">
+                    <label for="amountInvestedInput" class="form-label">
+                      Amount invested (USD)
+                    </label>
+                    <div class="input-group">
+                      <span class="input-group-text">$</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="amountInvestedInput"
+                        placeholder="10,000"
+                      />
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                  <div class="col-5 ps-1 pe-1">
+                    <label for="dateInvestedInput" class="form-label">
+                      Date invested
+                    </label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dateInvestedInput"
+                    />
+                    <div class="invalid-feedback">Invalid date</div>
+                  </div>
+                  <div class="col-2 ps-1 d-flex align-items-end">
+                    <button id="submitBtn2" class="btn btn-outline-primary">
+                      Submit
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="predictForm" style="display: none">
+            <div class="row mt-4">
+              <div class="col-10 offset-1">
+                <div class="mb-2">
+                  Provide a future date and your price predictions, estimate how
+                  your investment will perform if you adopt different
+                  strategies.
+                </div>
+                <div class="row mb-3">
+                  <div class="col-6 pe-1">
+                    <label for="amountInvestedInput2" class="form-label">
+                      Amount invested (USD)
+                    </label>
+                    <div class="input-group">
+                      <span class="input-group-text">$</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="amountInvestedInput2"
+                        placeholder="10,000"
+                      />
+                      <span class="input-group-text">.00</span>
+                    </div>
+                  </div>
+                  <div class="col-6 ps-1 pe-1">
+                    <label for="dateInvestedInput" class="form-label">
+                      Future date
+                    </label>
+                    <input
+                      type="date"
+                      class="form-control"
+                      id="dateInvestedInput"
+                    />
+                    <div class="invalid-feedback">Invalid date</div>
+                  </div>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-6 pe-1">
+                    <label for="priceInputRune" class="form-label">
+                      Price of RUNE (USD)
+                    </label>
+                    <div class="input-group">
+                      <span class="input-group-text">$</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="priceInputRune"
+                        placeholder="10,000"
+                      />
+                    </div>
+                  </div>
+                  <div class="col-6 ps-1 pe-1">
+                    <label for="priceInputAsset" class="form-label">
+                      Price of <span id="predictFormAssetName"></span> (USD)
+                    </label>
+                    <div class="input-group">
+                      <span class="input-group-text">$</span>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="priceInputAsset"
+                        placeholder="10,000"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6 pe-1">
+                    <label for="timespanForAPY">Use ROI of the last...</label>
+                    <select id="timespanForAPY" class="form-select">
+                      <option value="3days">3 days</option>
+                      <option value="7days">7 days</option>
+                      <option value="14days">14 days</option>
+                      <option value="30days">30 days</option>
+                    </select>
+                  </div>
+                  <div class="col-2 ps-1 d-flex align-items-end">
+                    <button
+                      id="submitBtn3"
+                      class="btn btn-outline-primary"
+                      disabled
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </div>
+                <p class="mt-3 text-danger">* [Feature under construction]</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Result / analysis -->
+        <div class="col-6">
+          <div class="row">
+            <div class="col-11">
+              <div class="mb-2">Result</div>
+              <div class="card w-100" id="resultCard">
+                <div class="card-header">
+                  <ul
+                    class="nav nav-pills card-header-pills align-items-center"
+                  >
+                    <li class="nav-item">
+                      <a class="nav-link active" id="toggler1" href=""
+                        >Total value</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="toggler2" href="">Fees vs IL</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="toggler3" href=""
+                        >P/L breakdown</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="toggler4" href="">Yield</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" id="toggler5" href="">Predict</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-body pl-4" id="resultText">
+                  An analysis of your LP data will be displayed here.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+      integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="js/calculateUserData.js"></script>
+    <script src="js/plotCharts.js"></script>
+    <script src="js/descriptiveTexts.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

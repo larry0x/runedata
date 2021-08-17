@@ -1,0 +1,29 @@
+.dropdown-toggle {
+  width: 100px;
+}
+
+#selectedLanguage {
+  height: 55px;
+  width: 185px;
+}
+
+#languageSelector .dropdown-menu {
+  width: 284px;
+}
+
+#selectedCoin {
+  height: 55px;
+  width: 393px;
+}
+
+#coinSelector .dropdown-menu {
+  width: 492px;
+}
+
+#coinSelector {
+  margin-left: -1px;
+}
+
+#coinsInput {
+  width: 459px;
+}

@@ -1,0 +1,24 @@
+{
+  "name": "runedata",
+  "version": "2.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/0x_larry/runedata.git"
+  },
+  "author": "0x_larry",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.com/0x_larry/runedata"
+  },
+  "homepage": "https://gitlab.com/0x_larry/runedata",
+  "devDependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  }
+}

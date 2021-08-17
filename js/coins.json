@@ -1,0 +1,121 @@
+[
+  {
+    "asset": "BNB.BNB",
+    "name": "Binance Coin",
+    "chain": "BNB",
+    "symbol": "BNB",
+    "icon": "images/bnb.png"
+  },
+  {
+    "asset": "BNB.BUSD-BD1",
+    "name": "Binance USD",
+    "chain": "BNB",
+    "symbol": "BUSD",
+    "icon": "images/busd.png"
+  },
+  {
+    "asset": "BTC.BTC",
+    "name": "Bitcoin",
+    "chain": "BTC",
+    "symbol": "BTC",
+    "icon": "images/btc.png"
+  },
+  {
+    "asset": "ETH.ETH",
+    "name": "Ethereum",
+    "chain": "ETH",
+    "symbol": "ETH",
+    "icon": "images/eth.png"
+  },
+  {
+    "asset": "BCH.BCH",
+    "name": "Bitcoin Cash",
+    "chain": "BCH",
+    "symbol": "BCH",
+    "icon": "images/bch.png"
+  },
+  {
+    "asset": "ETH.USDT-0XDAC17F958D2EE523A2206206994597C13D831EC7",
+    "name": "Tether USD",
+    "chain": "ETH",
+    "symbol": "USDT",
+    "icon": "images/usdt.png"
+  },
+  {
+    "asset": "LTC.LTC",
+    "name": "Litecoin",
+    "chain": "LTC",
+    "symbol": "LTC",
+    "icon": "images/ltc.png"
+  },
+  {
+    "asset": "ETH.SUSHI-0X6B3595068778DD592E39A122F4F5A5CF09C90FE2",
+    "name": "Sushi",
+    "chain": "ETH",
+    "symbol": "SUSHI",
+    "icon": "images/sushi.png"
+  },
+  {
+    "asset": "BNB.BTCB-BD1",
+    "name": "Bitcoin",
+    "chain": "BNB",
+    "symbol": "BTCB",
+    "icon": "images/btc.png"
+  },
+  {
+    "asset": "ETH.AAVE-0X7FC66500C84A76AD7E9C93437BFC5AC33E2DDAE9",
+    "name": "Aave",
+    "chain": "ETH",
+    "symbol": "AAVE",
+    "icon": "images/aave.png"
+  },
+  {
+    "asset": "ETH.LINK-0X514910771AF9CA656AF840DFF83E8264ECF986CA",
+    "name": "Chainlink",
+    "chain": "ETH",
+    "symbol": "LINK",
+    "icon": "images/link.png"
+  },
+  {
+    "asset": "ETH.YFI-0X0BC529C00C6401AEF6D220BE8C6EA1667F6AD93E",
+    "name": "Yearn Finance",
+    "chain": "ETH",
+    "symbol": "YFI",
+    "icon": "images/yfi.png"
+  },
+  {
+    "asset": "ETH.CREAM-0X2BA592F78DB6436527729929AAF6C908497CB200",
+    "name": "C.R.E.A.M.",
+    "chain": "ETH",
+    "symbol": "CREAM",
+    "icon": "images/cream.png"
+  },
+  {
+    "asset": "BNB.ETH-1C9",
+    "name": "Ethereum",
+    "chain": "BNB",
+    "symbol": "ETH",
+    "icon": "images/eth.png"
+  },
+  {
+    "asset": "ETH.ALPHA-0XA1FAA113CBE53436DF28FF0AEE54275C13B40975",
+    "name": "Alpha Finance",
+    "chain": "ETH",
+    "symbol": "ALPHA",
+    "icon": "images/alpha.png"
+  },
+  {
+    "asset": "ETH.SNX-0XC011A73EE8576FB46F5E1C5751CA3B9FE0AF2A6F",
+    "name": "Synthetix",
+    "chain": "ETH",
+    "symbol": "SNX",
+    "icon": "images/snx.png"
+  },
+  {
+    "asset": "ETH.PERP-0XBC396689893D065F41BC2C6ECBEE5E0085233447",
+    "name": "Perpetual Protocol",
+    "chain": "ETH",
+    "symbol": "PERP",
+    "icon": "images/perp.png"
+  }
+]

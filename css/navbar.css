@@ -1,0 +1,36 @@
+nav {
+  height: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+#logo img {
+  height: 50px;
+  width: 50px;
+}
+
+#logo h2 {
+  font-family: "Exo 2", sans-serif;
+  letter-spacing: 2px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+.text-deepskyblue {
+  color: #12ccfc;
+}
+
+.text-turquoise {
+  color: #54e3c3;
+}
+
+nav svg {
+  fill: #555555;
+  transition: 0.25s;
+}
+
+nav svg:hover {
+  fill: #54e3c3;
+}
